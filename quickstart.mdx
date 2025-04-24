@@ -4,121 +4,195 @@ description: 'Start building awesome documentation in under 5 minutes'
 ---
 # Getting Started
 
+<img src="/api/placeholder/1200/300" alt="Development Environment Setup" />
+
 This guide will help you set up your development environment for working with our Laravel-based e-recruitment platform and LMS with skill audit integration.
 
 ## System Requirements
 
 Ensure your development environment meets these requirements:
 
-- PHP 8.1 or higher
-- Composer 2.0+
-- MySQL 8.0+ or PostgreSQL 12+
-- Node.js 16+ and NPM
-- Redis (for queue processing and caching)
-- Git
+<CardGroup cols={2}>
+  <Card title="Server Requirements" icon="server">
+    - PHP 8.1 or higher
+    - MySQL 8.0+ or PostgreSQL 12+
+    - Redis (for queue processing and caching)
+  </Card>
+  <Card title="Development Tools" icon="wrench">
+    - Composer 2.0+
+    - Node.js 16+ and NPM
+    - Git
+  </Card>
+</CardGroup>
 
-## Installation Steps
+## Installation Process
 
-### 1. Clone the Repository
-
-```bash
-# Clone the main repository which contains both projects
-git clone https://github.com/your-organization/laravel-enterprise-solutions.git
-cd laravel-enterprise-solutions
-```
-
-### 2. Environment Configuration
-
-```bash
-# Copy the example environment files
-cp .env.example .env
-cp e-recruitment/.env.example e-recruitment/.env
-cp lms-skill-audit/.env.example lms-skill-audit/.env
-
-# Configure your database and other settings in each .env file
-```
-
-### 3. Install Dependencies
-
-```bash
-# Install PHP dependencies for both projects
-composer install
-cd e-recruitment && composer install
-cd ../lms-skill-audit && composer install
-cd ..
-
-# Install frontend dependencies
-npm install
-npm run dev
-```
-
-### 4. Database Setup
-
-```bash
-# Set up databases for both applications
-php artisan migrate --path=e-recruitment/database/migrations
-php artisan migrate --path=lms-skill-audit/database/migrations
-
-# Seed with sample data (optional)
-php artisan db:seed --class=ERecruitmentSeeder
-php artisan db:seed --class=LmsSkillAuditSeeder
-```
-
-### 5. Generate Application Keys
-
-```bash
-php artisan key:generate
-cd e-recruitment && php artisan key:generate
-cd ../lms-skill-audit && php artisan key:generate
-```
-
-### 6. Start the Development Server
-
-```bash
-php artisan serve
-```
+<Steps>
+  <Step title="Clone the Repository">
+    ```bash
+    # Clone the main repository which contains both projects
+    git clone https://github.com/your-organization/laravel-enterprise-solutions.git
+    cd laravel-enterprise-solutions
+    ```
+  </Step>
+  <Step title="Environment Configuration">
+    ```bash
+    # Copy the example environment files
+    cp .env.example .env
+    cp e-recruitment/.env.example e-recruitment/.env
+    cp lms-skill-audit/.env.example lms-skill-audit/.env
+    ```
+    
+    <Note>
+      Make sure to configure your database connections, mail settings, and API keys in each `.env` file according to your development environment.
+    </Note>
+  </Step>
+  <Step title="Install Dependencies">
+    <CodeGroup>
+      <Code title="Backend Dependencies" icon="php">
+      ```bash
+      # Install PHP dependencies for both projects
+      composer install
+      cd e-recruitment && composer install
+      cd ../lms-skill-audit && composer install
+      cd ..
+      ```
+      </Code>
+      <Code title="Frontend Dependencies" icon="js">
+      ```bash
+      # Install frontend dependencies
+      npm install
+      npm run dev
+      ```
+      </Code>
+    </CodeGroup>
+  </Step>
+  <Step title="Database Setup">
+    ```bash
+    # Set up databases for both applications
+    php artisan migrate --path=e-recruitment/database/migrations
+    php artisan migrate --path=lms-skill-audit/database/migrations
+    
+    # Seed with sample data (optional)
+    php artisan db:seed --class=ERecruitmentSeeder
+    php artisan db:seed --class=LmsSkillAuditSeeder
+    ```
+  </Step>
+  <Step title="Generate Application Keys">
+    ```bash
+    php artisan key:generate
+    cd e-recruitment && php artisan key:generate
+    cd ../lms-skill-audit && php artisan key:generate
+    ```
+  </Step>
+  <Step title="Start the Development Server">
+    ```bash
+    php artisan serve
+    ```
+    
+    <Tip>
+      The application will be available at `http://localhost:8000` by default.
+    </Tip>
+  </Step>
+</Steps>
 
 ## Running Individual Applications
 
 Each application can also be run independently:
 
-```bash
-# For E-Recruitment Platform
-cd e-recruitment
-php artisan serve --port=8000
-
-# For LMS with Skill Audit
-cd lms-skill-audit
-php artisan serve --port=8001
-```
+<AccordionGroup>
+  <Accordion icon="users" title="E-Recruitment Platform">
+    ```bash
+    cd e-recruitment
+    php artisan serve --port=8000
+    ```
+    
+    The E-Recruitment Platform will be available at `http://localhost:8000`
+  </Accordion>
+  <Accordion icon="graduation-cap" title="LMS with Skill Audit">
+    ```bash
+    cd lms-skill-audit
+    php artisan serve --port=8001
+    ```
+    
+    The LMS with Skill Audit will be available at `http://localhost:8001`
+  </Accordion>
+</AccordionGroup>
 
 ## Configuration Checklist
 
 Before proceeding with development, ensure you've properly configured:
 
-- [ ] Database connections
-- [ ] Mail server settings
-- [ ] Queue connections
-- [ ] Storage settings
-- [ ] Third-party API keys (if applicable)
+<CheckboxList>
+  - Database connections
+  - Mail server settings
+  - Queue connections
+  - Storage settings
+  - Third-party API keys (if applicable)
+</CheckboxList>
 
 ## Next Steps
 
 Now that you have the development environment set up, you can:
 
-- Explore the [E-Recruitment Platform](/e-recruitment/overview) documentation
-- Learn about the [LMS with Skill Audit](/lms-skill-audit/overview) features
-- Review [Shared Components](/shared-components/authentication) that span both systems
-- Check out the [API Reference](/api-reference/overview) for integration possibilities
+<CardGroup cols={2}>
+  <Card title="E-Recruitment Platform" icon="users" href="/e-recruitment/overview">
+    Explore the E-Recruitment Platform documentation
+  </Card>
+  <Card title="LMS with Skill Audit" icon="graduation-cap" href="/lms-skill-audit/overview">
+    Learn about the LMS with Skill Audit features
+  </Card>
+  <Card title="Shared Components" icon="puzzle-piece" href="/shared-components/authentication">
+    Review components used by both systems
+  </Card>
+  <Card title="API Reference" icon="code" href="/api-reference/overview">
+    Check integration possibilities
+  </Card>
+</CardGroup>
 
 ## Troubleshooting Common Issues
 
 If you encounter issues during setup:
 
-1. Ensure all required PHP extensions are installed
-2. Verify database credentials and connectivity
-3. Check log files in `storage/logs` for detailed error messages
-4. Confirm that your PHP version meets the requirements
-5. Make sure all required ports are available for development servers
+<AccordionGroup>
+  <Accordion icon="bug" title="PHP Extensions">
+    Ensure all required PHP extensions are installed:
+    ```bash
+    # Check installed PHP extensions
+    php -m
+    
+    # Required extensions include:
+    # - pdo_mysql or pdo_pgsql
+    # - mbstring
+    # - tokenizer
+    # - xml
+    # - ctype
+    # - json
+    # - bcmath
+    # - fileinfo
+    ```
+  </Accordion>
+  <Accordion icon="database" title="Database Connection Issues">
+    Verify database credentials and connectivity:
+    ```bash
+    # Test MySQL connection
+    mysql -u username -p -h hostname
+    
+    # Test PostgreSQL connection
+    psql -U username -h hostname -d database
+    ```
+  </Accordion>
+  <Accordion icon="file-lines" title="Log Files">
+    Check log files in `storage/logs` for detailed error messages:
+    ```bash
+    # View the latest log file
+    tail -f storage/logs/laravel.log
+    ```
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  Make sure you never commit your `.env` files or any sensitive credentials to your repository. Always use environment variables for secrets in production.
+</Warning>
 
 Need additional help? Join our [developer community](https://community.example.com) or submit an issue on our GitHub repository.
