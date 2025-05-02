@@ -31,11 +31,13 @@
               "essentials/settings",
               "essentials/navigation",
               "essentials/reusable-snippets"
-            ],
+            ]
+            
+          },
+          {
             "group": "Good UI",
             "pages": []
-            
-          }
+          },
         ]
       },
       {
