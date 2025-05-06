@@ -22,23 +22,16 @@
 
             ]
           },
-          {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          },
+
           {
             "group": "Good UI",
             "pages": [
               "good-ui/key-principles/choose-a-personality",
-              "good-ui/key-principles/systemize-everything"
-              
+              "good-ui/key-principles/systemize-everything",
+              "good-ui/key-principles/start-with-too-much-space",
+              "good-ui/key-principles/design-by-elimination",
+                "good-ui/key-principles/think-mobile-first"
+
             ]
           }
         ]
@@ -49,8 +42,7 @@
           {
             "group": "API Documentation",
             "pages": [
-              "api-reference/introduction",
-              "api-reference/frans"
+              "api-reference/introduction"
             ]
           },
           {
