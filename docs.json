@@ -36,12 +36,9 @@
           {
             "group": "Good UI",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "good-ui/key-principles/choose-a-personality",
+              "good-ui/key-principles/systemize-everything"
+              
             ]
           }
         ]
